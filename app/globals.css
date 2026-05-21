@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #311B56;
+  --border-color: #311B56;
+  --accent-purple: #8C52FF; /* Vivid purple */
+  --accent-pink: #D5C6FF;   /* Soft lavender */
+  --accent-green: #8C52FF;  /* Vivid purple */
+  --accent-yellow: #FFFFFF; /* Pure Clean White */
+  --accent-blue: #D5C6FF;   /* Soft lavender */
+  --card-bg: #FFFFFF;
+  --shadow-color: #311B56;
+}
+
+[data-theme="dark"] {
+  --background: #FAF8F5;
+  --foreground: #311B56;
+  --border-color: #311B56;
+  --accent-purple: #8C52FF;
+  --accent-pink: #D5C6FF;
+  --accent-green: #8C52FF;
+  --accent-yellow: #FFFFFF;
+  --accent-blue: #D5C6FF;
+  --card-bg: #FFFFFF;
+  --shadow-color: #311B56;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Inter", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars for slick visual panels */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Core Neo-Brutalist Shadows & Borders - Synchronized with Tani (border-2, 4px shadow, rounded-none) */
+.brutal-border {
+  border: 2px solid var(--border-color);
+  border-radius: 0px !important;
+}
+.brutal-border-lg {
+  border: 2px solid var(--border-color);
+  border-radius: 0px !important;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.brutal-shadow {
+  box-shadow: 4px 4px 0px var(--shadow-color);
+}
+.brutal-shadow-lg {
+  box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+.brutal-btn-active:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* ──── Custom Micro-Animations ──── */
+@keyframes cute-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes cute-bounce {
+  0%, 100% { transform: translateY(0px) scaleY(1); }
+  50% { transform: translateY(-4px) scaleY(0.98); }
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.animate-cute-float {
+  animation: cute-float 4s ease-in-out infinite;
+}
+
+.animate-cute-bounce {
+  animation: cute-bounce 2s ease-in-out infinite;
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 1.2s ease-in-out infinite;
+}
+
+/* Force rounded-none globally for absolute UI synchronization with Tani */
+*, ::before, ::after {
+  border-radius: 0px !important;
+}
+
+/* Glassmorphism custom backdrop class */
+.glass-panel {
+  background: rgba(250, 248, 245, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Code Typography settings - Space Mono */
+.code-font {
+  font-family: var(--font-mono), "Space Mono", monospace;
+}
+
+/* Gorgeous full article prose content styling */
+.article-content-prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  text-align: justify;
+  font-family: var(--font-sans), "Inter", sans-serif;
+}
+.article-content-prose img {
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--shadow-color);
+  margin: 1.75rem auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px !important;
+}
+.article-content-prose ul {
+  list-style-type: square;
+  margin-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+}
+.article-content-prose li {
+  margin-bottom: 0.5rem;
+}
+.article-content-prose strong, .article-content-prose b {
+  font-weight: 900;
+  color: var(--accent-purple);
+}
+.article-content-prose a {
+  color: var(--accent-purple);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+.article-content-prose h2, .article-content-prose h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
