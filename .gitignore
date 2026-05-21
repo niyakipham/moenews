@@ -20,6 +20,7 @@
 # production
 /build
 /dist
+/src/tailwind.css
 
 # misc
 .DS_Store
